@@ -1,0 +1,33 @@
+# Ideally we won't need this in the future but for the sake of the demo this is a dictionary that maps column names to their letter in the excel sheet
+
+columnTranslate = {
+    "Project Name": 1,
+    "College": 2,
+    "Department": 3,
+    "Class Level": 4,
+    "Primary Focus Area": 5,
+    "Academic Level": 6,
+    "Start Date": 7,
+    "End Date": 8,
+    "Project Description": 9,
+    "Semester": 10,
+    "Status": 11,
+    "Compensation": 12,
+    "Opportunity Type": 13,
+    "University Partner": 14,
+    "Community Partner Internal/External": 15,
+    "Community Partner Organization": 16,
+    "Community Partner Type": 17,
+    "Community Partner Contact": 18,
+    "Community Partner Website": 19,
+    "Number of Participants": 20,
+    "City": 21,
+    "State": 22,
+    "Country": 23,
+    "Mode": 24,
+    "Impact": 25,
+    "Outreach": 26,
+    "Cost to Student": 27,
+    "Time Commitment": 28,
+    "Admission Type": 29
+}

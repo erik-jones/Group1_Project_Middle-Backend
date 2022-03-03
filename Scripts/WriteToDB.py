@@ -1,5 +1,7 @@
 # Python script that parses data sent by middle end script and writes it to the EL database
 import openpyxl
+from sqlalchemy import column
+import ColumnTranslation
 
 # Constants (may move to a seperate constants file later for organization, doesn't really matter now)
 ELDB_FILE_PATH = "../Data/Example_DB.xlsx"
@@ -13,21 +15,24 @@ def __getMaxRows(sheet):
     return rows
 
 # 'Main Method' of script
-def writeToExcel():
+def writeToExcel(dataFromForm):
     # Temporary fake data, will change later
-    exampleInput = [["Name", "Biology Outreach"], 
-                    ["College", "Arts & Science"], 
-                    ["Department", "Biology"],
-                    ["Academic Level", "Undergraduate"]]
+    #exampleInput = [["Project Name", "Biology Outreach"], 
+    #                ["College", "Arts & Science"], 
+    #                ["Department", "Biology"],
+    #                ["Academic Level", "Undergraduate"]]
+
+    columns = ColumnTranslation.columnTranslate
 
     # Load the db and get the sheet the projects are in
     db = openpyxl.load_workbook(ELDB_FILE_PATH)
     projectSheet = db['Sheet1']
 
     newRow = __getMaxRows(projectSheet) + 1
-    print(newRow)
-   # for i in exampleInput:
+    for field in dataFromForm:
+        tempCell = projectSheet.cell(row=newRow, column=columns.get(field[0])).value = field[1]
 
+    db.save(ELDB_FILE_PATH)
 
 # Driver Code (move to different file later)
 writeToExcel()
