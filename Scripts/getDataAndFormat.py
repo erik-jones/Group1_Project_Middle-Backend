@@ -37,12 +37,12 @@ def getFieldThing():
         host = "localhost",
         user = "root",
         password = "",
-        database = "testsite"
+        database = "mysite"
     )
 
     mycursor = mydb.cursor()
-    test_query = "SELECT * FROM wp_fluentform_entry_details where submission_id = 6"
-
+    # submission_id is connected to a specific form that a user submits. Will increase with each submission
+    test_query = "SELECT * FROM wp_fluentform_entry_details where submission_id = 1;"
     mycursor.execute(test_query)
 
     for x in mycursor:

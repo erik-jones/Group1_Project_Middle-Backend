@@ -1,6 +1,5 @@
 # Python script that parses data sent by middle end script and writes it to the EL database
 import openpyxl
-from sqlalchemy import column
 import ColumnTranslation
 
 # Constants (may move to a seperate constants file later for organization, doesn't really matter now)
@@ -31,8 +30,5 @@ def writeToExcel(dataFromForm):
     newRow = __getMaxRows(projectSheet) + 1
     for field in dataFromForm:
         tempCell = projectSheet.cell(row=newRow, column=columns.get(field[0])).value = field[1]
-
+        
     db.save(ELDB_FILE_PATH)
-
-# Driver Code (move to different file later)
-writeToExcel()
