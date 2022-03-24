@@ -1,8 +1,8 @@
-# Python script that parses data sent by middle end script and writes it to the EL database
+# Writes the data pulled from the form to the excel database
 import openpyxl
 import ColumnTranslation
 
-# Constants (may move to a seperate constants file later for organization, doesn't really matter now)
+# Constants
 ELDB_FILE_PATH = "../Data/Example_DB.xlsx"
 
 # Return the max number of rows that have data so we can append to the end
@@ -15,19 +15,15 @@ def __getMaxRows(sheet):
 
 # 'Main Method' of script
 def writeToExcel(dataFromForm):
-    # Temporary fake data, will change later
-    #exampleInput = [["Project Name", "Biology Outreach"], 
-    #                ["College", "Arts & Science"], 
-    #                ["Department", "Biology"],
-    #                ["Academic Level", "Undergraduate"]]
-
     columns = ColumnTranslation.columnTranslate
 
     # Load the db and get the sheet the projects are in
     db = openpyxl.load_workbook(ELDB_FILE_PATH)
     projectSheet = db['Sheet1']
-
+    
+    # Get the next empty row in the sheet
     newRow = __getMaxRows(projectSheet) + 1
+
     for field in dataFromForm:
         tempCell = projectSheet.cell(row=newRow, column=columns.get(field[0])).value = field[1]
         
