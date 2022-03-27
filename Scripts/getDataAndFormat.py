@@ -40,7 +40,6 @@ fieldArray =    [   ["Project Name"],
                     ["Project Description"]
                 ]
 
-#couldn't be bothered to choose a better name for this
 #connects to a MySQL database and retrieves data
 def getFieldThing():
     #establishes a MySQL connection
@@ -123,9 +122,4 @@ def getFieldThing():
         else:
             print("Not found")
 
-    for i in range(len(fieldArray)):
-        print(fieldArray[i])
-
     return(fieldArray)
-
-getFieldThing()
