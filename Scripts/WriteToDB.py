@@ -15,6 +15,7 @@ def __getMaxRows(sheet):
 
 # 'Main Method' of script
 def writeToExcel(dataFromForm):
+    # get the columns from the excel file
     columns = ColumnTranslation.columnTranslate
 
     # Load the db and get the sheet the projects are in
