@@ -15,8 +15,8 @@ def __getMaxRows(sheet):
 
 # 'Main Method' of script
 def writeToExcel(dataFromForm):
-    # get the columns from the excel file
-    columns = ColumnTranslation.columnTranslate
+    # Get the column from the excel file
+    columns = ColumnTranslation.translateColumns(ELDB_FILE_PATH)
 
     # Load the db and get the sheet the projects are in
     db = openpyxl.load_workbook(ELDB_FILE_PATH)
@@ -25,6 +25,7 @@ def writeToExcel(dataFromForm):
     # Get the next empty row in the sheet
     newRow = __getMaxRows(projectSheet) + 1
 
+    # Insert the value from the form into its respective column/row
     for field in dataFromForm:
         tempCell = projectSheet.cell(row=newRow, column=columns.get(field[0])).value = field[1]
         

@@ -1,33 +1,15 @@
-# Ideally we won't need this in the future but for the sake of the demo this is a dictionary that maps column names to their letter in the excel sheet
+# Loops through the columns of the excel database, builds a dictionary where key is column name and value is its respective column number
+# Ex. columnTranslate = {"columnName1": 1, "columnName2": 2}
+import openpyxl
 
-columnTranslate = {
-    "Name": 1,
-    "College": 2,
-    "Department": 3,
-    "Academic Level": 4,
-    "Class Level": 5,
-    "Course": 6,
-    "Section": 7,
-    "Primary Focus Area": 8,
-    "Start Date": 9,
-    "End Date": 10,
-    "Project Description": 11,
-    "Semester": 12,
-    "Status": 13,
-    "Compensation": 14,
-    "Opportunity Type": 15,
-    "University Partner": 16,
-    "Community Partner: Internal/External": 17,
-    "Community Partner: Organization": 18,
-    "Community Partner: Type": 19, 
-    "Community Partner: Contact": 20,
-    "Community Partner: Website": 21,
-    "Number of Participants": 22,
-    "City": 23,
-    "State": 24,
-    "Country": 25,
-    "Mode": 26,
-    "Location Impact": 27,
-    "Time Commitment": 28,
-    "Admission Type": 29
-}
+def translateColumns(filepath):
+    workbook = openpyxl.load_workbook(filepath)
+    worksheet = workbook["Sheet1"]
+
+    colNums = {}
+    current = 1
+    for col in worksheet.iter_cols(1, worksheet.max_column):
+        colNums[col[0].value] = current
+        current += 1
+
+    return(colNums)
