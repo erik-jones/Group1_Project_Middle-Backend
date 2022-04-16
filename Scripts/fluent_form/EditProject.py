@@ -2,7 +2,7 @@
 import openpyxl
 
 # Constants
-ELDB_FILE_PATH = "../Data/Example_DB.xlsx"
+ELDB_FILE_PATH = "../../Data/Example_DB.xlsx"
 
 #to open the workbook
 wb_obj = openpyxl.load_workbook(ELDB_FILE_PATH)

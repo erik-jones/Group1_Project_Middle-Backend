@@ -3,7 +3,7 @@ import openpyxl
 import ColumnTranslation
 
 # Constants
-ELDB_FILE_PATH = "../Data/Example_DB.xlsx"
+ELDB_FILE_PATH = "../../Data/Example_DB.xlsx"
 
 # Return the max number of rows that have data so we can append to the end
 def __getMaxRows(sheet):
