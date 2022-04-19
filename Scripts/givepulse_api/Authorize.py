@@ -29,6 +29,4 @@ def getAuthToken():
     # This returns a response in JSON form, which in python is stored as a dictionary, which we can get the token from
     response = requests.get("https://api2.givepulse.com/auth", headers=header)
     token = response.json().get("token")
-    print(token)
-
-getAuthToken()
+    return token
