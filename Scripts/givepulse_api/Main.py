@@ -6,3 +6,4 @@ import Authorize
 token = Authorize.getAuthToken()
 
 # Make other calls here and pass the token as a parameter
+getGroups(token)
