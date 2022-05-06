@@ -5,13 +5,14 @@
 import base64
 import requests
 
-key = ""
-secret = ""
-email = ""
-password = ""
-
 # Gets the bearer auth token needed for future calls
-def getAuthToken():
+def getAuthToken(info):
+    # Gather the required credentials
+    key = info["givepulse_key"]
+    secret = info["givepulse_secret"]
+    email = info["givepulse_email"]
+    password = info["givepulse_password"]
+
     # Need to put the above values in the format: key:secret:email:password
     # Then base64 encode that string
     message = key + ':' + secret + ':' + email + ':' + password

@@ -36,9 +36,9 @@ def __writeToSheet(db: Workbook, data, columnNums, sheetName):
                 for val in data.get(field):
                     fieldAsString = fieldAsString + ", " + data.get(field)[counter]
                     counter += 1
-                tempCell = sheet.cell(row=newRow, column=columns.get(field)).value = data.get(fieldAsString)
+                sheet.cell(row=newRow, column=columns.get(field)).value = data.get(fieldAsString)
             else:    
-                tempCell = sheet.cell(row=newRow, column=columns.get(field)).value = data.get(field)
+                sheet.cell(row=newRow, column=columns.get(field)).value = data.get(field)
 
 # Main function of this script
 def writeData(groupData, impactData, eventData, courseData, excelFilePath):
