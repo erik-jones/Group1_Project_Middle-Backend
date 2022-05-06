@@ -3,7 +3,7 @@ import Authorize, Courses, Groups, Impacts, Events
 import WriteToExcel, Box
 
 # Constants
-EXCEL_FILE_PATH = "Scripts/givepulse_api/BamaPulse_Data.xlsx"
+EXCEL_FILE_PATH = "Data_Collection_Script/BamaPulse_Data.xlsx"
 
 # Execution Starts Here
 # First need to get an authorization token for bamapulse
