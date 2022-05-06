@@ -12,7 +12,7 @@ def __authorize():
     auth = CCGAuth(
         client_id='kmekvkq9zw2vobwr6psn3g4umf9o5u2g',
         client_secret='blTORvVwqm0V9v4VfNRdPY5mbzFARnvo',
-        access_token='1qEt5i083O22L8LcJbQRHdPDnkCE9BnQ',
+        access_token='cMbvwYcicNYz3tNV9YMXJSqytwFMAh0Z',
         #user=""
     )
     # Client is used to call all other methods

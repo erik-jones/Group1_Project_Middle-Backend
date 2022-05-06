@@ -1,7 +1,4 @@
 # Main script that will delegate and call all other scripts
-from csv import excel
-
-from pandas import ExcelFile
 import Authorize, Courses, Groups, Impacts, Events
 import WriteToExcel, Box
 

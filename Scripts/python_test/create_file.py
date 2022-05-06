@@ -1,1 +1,0 @@
-f = open("your_mom.txt", "w")

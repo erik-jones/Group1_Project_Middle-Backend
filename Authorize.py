@@ -5,9 +5,6 @@
 import base64
 import requests
 
-# Probably should find a more secure way to store these values but for now we'll leave them here
-# Just make these values empty strings before pushing so that they aren't out on github
-# We should also find a more permanent email to use so we aren't using our own logins in the future
 key = ""
 secret = ""
 email = ""
