@@ -42,7 +42,7 @@
     * The developer token only lasts about 60 minutes, then you have to manually generate a new one.
   
     * Moving foward a more permanent token will be needed. The documentation is once again the best resource for this, but to the best of my knowledge, under your app go to "Authorization" and request to have your app authorized.
-  <br>
+  <br></br>
   * Security:  
     * Ideally would want a more secure way to store the values in "Info.json", we just were unable to get around to this in time
   <br></br>
