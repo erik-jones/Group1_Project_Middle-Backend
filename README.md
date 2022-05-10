@@ -4,6 +4,8 @@
   * ### Pulls data from bamapulse using their api, writes that data to an excel file stored in box
 <br></br>
 * ## How to Run:
+  * The format of the excel file that works with this script is in here as BamaPulse_Data.xlsx
+ 
   *  All files being used are in the Data_Collection_Script folder
 
   *  Execution begins in 'Main.py', which calls all of the other files as needed
