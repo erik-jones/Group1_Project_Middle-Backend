@@ -29,14 +29,14 @@ def getGroups(token, fields = None):
     
     # Get the total from the first call, then make successive calls until you reach the total
     total = int(data.get('total'))
-    # while len(groupList) < total:
-    #     counter += 1
-    #     print(f"Call to groups: {counter}")
-    #     offset += 50
-    #     params.update({"offset": offset})
+    while len(groupList) < total:
+        counter += 1
+        print(f"Call to groups: {counter}")
+        offset += 50
+        params.update({"offset": offset})
 
-    #     response = requests.get("https://api2.givepulse.com/groups", headers=headers, params=params)
-    #     data = response.json()
-    #     groupList.extend(data.get("results"))
+        response = requests.get("https://api2.givepulse.com/groups", headers=headers, params=params)
+        data = response.json()
+        groupList.extend(data.get("results"))
 
     return groupList
