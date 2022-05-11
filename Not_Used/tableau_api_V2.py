@@ -4,6 +4,7 @@ import tableauserverclient as TSC
 #----------------------
 #Token Name: test_token
 #Token Secret: C8uI/8q1RaqsDIZTQFDz6Q==:kkgMqOEcyguTCMuyIrX0EspnG5jNhLhm
+#Final updates: Test tokens no longer work
 
 tableau_auth = TSC.PersonalAccessTokenAuth('test_token', 'C8uI/8q1RaqsDIZTQFDz6Q==:kkgMqOEcyguTCMuyIrX0EspnG5jNhLhm', 'uamgtdataviz')
 server = TSC.Server('https://prod-useast-a.online.tableau.com/', use_server_version=True)
